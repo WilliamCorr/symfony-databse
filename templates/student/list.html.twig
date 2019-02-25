@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1> A LIST of students </h1>
+
+    <ul>
+        {% for student in students %}
+
+        <li> id = {{ student.id }}
+        <br>
+        name = {{ student.firstName }} {{ student.surname }}
+            <a href="{{ url('student_show', {id: student.id}) }}">(details)</a>
+
+        </li>
+     {% endfor %}
+    </ul>
+
+{% endblock %}
